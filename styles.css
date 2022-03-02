@@ -1,0 +1,321 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --blue: #0476d9;
+    --dkblue: #035ba7;
+    --dkaqua: #038d80;
+    --azulito: #04BFAD;
+    --yellow: #F2D335;
+    --lhyellow: #f5dd65;
+    --orange: #F28705;
+    --red: #D94A4A;
+    --lhred: #e27474;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--dkblue);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a{
+    color: var(--red);
+}
+
+a:hover{
+    color: var(--lhred);
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+
+/* Background color divs */
+.section-plum{
+    background-color: var(--dkaqua)
+}
+
+.section-red {
+    background-color: var(--red);
+}
+
+.gradient{
+    background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    height: 3px;
+}
+
+/* Intro Styles */
+
+#intro {
+    padding: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#intro .name {
+    font-family: var(--mono);
+}
+
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: #F28705;
+    display: block;
+}
+
+#intro h2 {
+    font-size: 4rem;
+    font-weight: normal;
+}
+
+#contact{
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+#contact p:last-child{
+   margin-top: 3rem;
+}
+
+/* Navbar Styles */
+nav{
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav h1 a{
+    font-family : var(--sans);
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+nav li:first-child{
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+nav [class*="fa-"]{
+    font-size: 150%;
+    color: var(--red);
+}
+nav li:first-child [class*="fa-"]{
+    font-size: 150%;
+    color: var(--lhred);
+    padding-right: 5px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+nav a:hover{
+    color: var(--lhred);
+}
+nav [class*="fa-"]:hover{
+    color: var(--orange);
+}
+nav li:first-child [class*="fa-"]:hover{
+    color: var(--white);
+}
+
+.button{
+    background-color: var(--yellow);
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: var(--dkblue);
+    text-decoration: none;
+    font-family: var(--mono);
+}
+.button:hover{
+    background-color: #04BFAD;
+    color: var(--dkblue);
+}
+
+/* Projects section */
+#project{
+    padding: 4rem 1rem;
+}
+#project h2{
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5)
+}
+
+#project h3{
+    color: var(--yellow)
+}
+#project h4{
+    font-size: 1rem;
+    font-family: var(--mono);
+    margin: 0;
+}
+#project a{
+    color: var(--yellow)
+}
+.black-box{
+    background-color: var(--dkblue);
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#project ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+}
+#project img {
+    margin: 2rem 0 4rem 0;
+    border-left: 1px solid var(--dkblue);
+    border-top: 1px solid var(--dkblue);
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+@media (min-width: 550px) {
+    article{
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+    #project{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    #project img{
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    #project .MexaImg {
+        grid-column: 5/11;
+        grid-row: 1/2;
+    }
+    .text {
+        grid-column: 5/11;
+        grid-row: 1/2;
+        order: 2;
+        text-align: right;
+    }
+    .text-left {
+        grid-column: 1/6;
+        grid-row: 1/2;
+        order: 1;
+        text-align: left;
+    }
+    #project ul {
+        justify-content: flex-end;
+    }
+    #project .MexaUl {
+        justify-content: flex-start;
+    }
+}
+
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child{
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
+
+/* footer Styles */
+footer{
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+footer h2 a {
+    font-family : var(--sans);
+}
+
+footer h2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+footer p {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+footer [class*="fa-"]{
+    font-size: 150%;
+    color: var(--red);
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+}
+
+footer a:hover{
+    color: var(--lhred);
+}
+footer [class*="fa-"]:hover{
+    color: var(--lhred);
+}
